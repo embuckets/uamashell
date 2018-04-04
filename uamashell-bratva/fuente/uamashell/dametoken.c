@@ -1,11 +1,15 @@
-#include "uamashell.h"
+/*
+Autores:
+Emilio Hernandez Segovia			2143032439
+Jesus Eduardo Noriega Hurtado		2143000991
+Jose Daniel Reyes Arrona			2143034111
+Juan Torres Espinoza				210204585
+Jenny Nazareth Urtiaga Torres		2113034087
+*/
 
 /**********************************************************************
-* dametoken : Procesa los tokens de las lineas leidas.                *
+* dametoken : Procesa palabra leida.				                  *
 * Devuelve el token y su tipo.                                        *
-* $Id$                                                                *
-* $Author$                                                            *
-*                                                                     *
 * Parámetros:                                                         *
 *                                                                     *
 * apuntadorsalida: Apunta al token inicial.						      *
@@ -13,36 +17,36 @@
 * intervalo: Rango en que varia cada variable de desicion.            *
 * token: Token identificado.                                          *
 **********************************************************************/
+#include "uamashell.h"
 
-int dametoken(char **apuntadorsalida,char **apuntador,char **token)
+int dametoken(char **apuntadorsalida, char **apuntador, char **token)
 {
 	int tipo;
-	*apuntadorsalida=*token;
+	*apuntadorsalida = *token;
 
 	/* Saltarse los blancos */
-	for(;**apuntador==' ' || **apuntador=='\t';(*apuntador)++)
+	for (; **apuntador == ' ' || **apuntador == '\t'; (*apuntador)++)
 		;
-	*(*token)++=**apuntador;
+	*(*token)++ = **apuntador;
 
-	switch(*(*apuntador)++)
+	switch (*(*apuntador)++)
 	{
-		case '\n':
-			tipo=EOL;
+	case '\n':
+		tipo = EOL;
 		break;
-		case '&':
-			tipo=AMPERSAND;
+	case '&':
+		tipo = AMPERSAND;
 		break;
-		case ';':
-			tipo=PUNTOYCOMA;
+	case ';':
+		tipo = PUNTOYCOMA;
 		break;
-		default:
-			tipo=ARG;
-			while(esargumento(**apuntador))
-				*(*token)++=*(*apuntador)++;
+	default:
+		tipo = ARG;
+		while (esargumento(**apuntador))
+			*(*token)++ = *(*apuntador)++;
 		break;
 	}
 
-	*(*token)++='\0';
-	return(tipo);
+	*(*token)++ = '\0';
+	return (tipo);
 }
-

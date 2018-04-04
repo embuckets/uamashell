@@ -1,6 +1,6 @@
 //Este modulo no funciona correctamente verificar
 #include "uamashell.h"
-#include<string.h>
+#include <string.h>
 
 void configurar(int numline)
 {	
