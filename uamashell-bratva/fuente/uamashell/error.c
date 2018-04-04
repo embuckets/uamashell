@@ -14,10 +14,7 @@ Jenny Nazareth Urtiaga Torres		2113034087
 *                                                                     *
 * mensaje: Mensaje de error a reportar.    						      *
 **********************************************************************/
-#include "error.h"
-#include <string.h>
-#include <stdio.h>
-#include <errno.h>
+#include "uamashell.h"
 
 void error(char *mensaje)
 {

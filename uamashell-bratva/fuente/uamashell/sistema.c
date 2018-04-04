@@ -15,7 +15,6 @@ Jenny Nazareth Urtiaga Torres		2113034087
 * lineacomando: linea con el comando a ejecutar.				      *
 **********************************************************************/
 #include "uamashell.h"
-#include <string.h>
 
 int sistema(char **lineacomandos, int donde)
 {

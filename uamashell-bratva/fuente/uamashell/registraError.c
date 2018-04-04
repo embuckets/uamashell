@@ -8,15 +8,6 @@ Jenny Nazareth Urtiaga Torres		2113034087
 */
 
 #include "uamashell.h"
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <ifaddrs.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
 
 void registraError(char *comando, int pid)
 {

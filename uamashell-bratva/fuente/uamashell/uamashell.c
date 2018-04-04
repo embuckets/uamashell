@@ -16,7 +16,6 @@ Jenny Nazareth Urtiaga Torres		2113034087
 * argv: Valor de los argumentos proporcionados.					      *
 **********************************************************************/
 #include "uamashell.h"
-#include <stdio.h>
 
 int main(int argc, char **argv)
 {

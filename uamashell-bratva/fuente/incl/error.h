@@ -13,4 +13,3 @@ Jenny Nazareth Urtiaga Torres		2113034087
 #include <sys/types.h>
 #include <errno.h>
 
-void error(char *);
