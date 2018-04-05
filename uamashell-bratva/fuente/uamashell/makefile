@@ -8,13 +8,12 @@
 
 COMPILADOR=gcc 
 
-FUENTE = $(RUTA_UTIL)dametoken.c error.c esargumento.c imprimeBitacora.c sistema.c \
-leerlinea.c procesalinea.c registraComandos.c registraError.c sistema.c uamashell.c
+FUENTE = dametoken.c error.c esargumento.c imprimeBitacora.c sistema.c \
+leerlinea.c procesalinea.c registraComandos.c registraError.c uamashell.c
 
 OBJS=$(FUENTE:.c=.o)
 
-HEADER1=uamashell.h 
-HEADER2=error.h 
+HEADER=uamashell.h 
 
 PROG= $(RUTA_BIN)uamashell
 
@@ -34,4 +33,4 @@ BORRA:
 .c.o: 
 	$(COMPILADOR) -c -I$(RUTA_INCL) $*.c -o $*.o
 
-$(OBJS): $(RUTA_INCL)$(HEADER1) $(RUTA_INCL)$(HEADER2)
+$(OBJS): $(RUTA_INCL)$(HEADER)
