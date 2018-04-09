@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 	signal(SIGQUIT, SIG_IGN);
 
 	FILE *inst;
-	inst = fopen("config.ini", "r");
+	inst = fopen("config", "r");
 	int N;
 	int bandera = 0;
 	char c;
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	}
 	int contador = 0;
 	FILE *file;
-	file = fopen("instancias.lst", "r");
+	file = fopen("instancias.conf", "r");
 	while ((c = fgetc(file)) != EOF)
 	{
 		contador++;
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	fclose(file);
 	if ((contador) <= N - 1)
 	{
-		file = fopen("instancias.lst", "a");
+		file = fopen("instancias.conf", "a");
 		fputs("x", file);
 		fclose(file);
 		char *prompt;

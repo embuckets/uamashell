@@ -10,13 +10,13 @@ int sistema(char **lineacomandos, int donde)
 		int contador = 0;
 		char c;
 		FILE *file;
-		file = fopen("instancias.lst", "r");
+		file = fopen("instancias.conf", "r");
 		while ((c = fgetc(file)) != EOF)
 		{
 			contador++;
 		}
 		fclose(file);
-		file = fopen("instancias.lst", "w");
+		file = fopen("instancias.conf", "w");
 		for (int i = 0; i < contador - 1; i++)
 		{
 			fputs("x", file);
@@ -50,9 +50,9 @@ int sistema(char **lineacomandos, int donde)
 		char *archivo;
 		int i = 0;
 		registraCMDS(*lineacomandos, getpid());
-		printf("1.-instancias... Modificar el numero de instancias\n");
-		printf("2.-commanddir... Modificar ruta de command.log\n");
-		printf("3.-errordir...Modificar ruta de errordir.log\n");
+		printf("1. Modificar el numero de instancias\n");
+		printf("2. Modificar ruta de programa.log\n");
+		printf("3. Modificar ruta de programa_error.log\n");
 		printf("Indica numero de la configuracion que deseas modificar:");
 		scanf("%d", &i);
 		configurar(i);
