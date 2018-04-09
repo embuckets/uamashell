@@ -7,6 +7,10 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+lee la linea completa escrita
+*/
+
 #include "uamashell.h"
 
 int leerlinea(char *prompt, char *bufferentrada)

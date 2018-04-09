@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+registra los comandos ejecutados
+en el archivo programa.log
+*/
+
 #include "uamashell.h"
 
 void registraCMDS(char *comando, int pid)

@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+ejecuta los comando exclusivos 
+del shell
+*/
+
 #include "uamashell.h"
 
 int sistema(char **lineacomandos, int donde)
@@ -71,9 +76,10 @@ int sistema(char **lineacomandos, int donde)
 	int estadosalida, retorno;
 	int pid = fork();
 
-	if (pid < 0){
+	if (pid < 0)
+	{
 		error("Shellcito");
-		return(0);
+		return (0);
 	}
 	if (pid == 0)
 	{
@@ -81,7 +87,7 @@ int sistema(char **lineacomandos, int donde)
 		strcat(bin, "/bin/");
 		strcat(bin, lineacomandos[0]);
 		execv(bin, lineacomandos);
-		return(0);
+		return (0);
 		// registraError(*lineacomandos, pid);
 		// error(*lineacomandos);
 	}
@@ -96,11 +102,13 @@ int sistema(char **lineacomandos, int donde)
 			registraCMDS(*lineacomandos, pid);
 			return (0);
 		}
-
-		/* Espera hasta que el hijo termine */
-		while ((retorno = wait(&estadosalida)) != pid && retorno != -1)
-			;
-		return ((retorno == -1) ? -1 : (estadosalida >>= 8, estadosalida &= 0xFF));
+		else
+		{
+			/* Espera hasta que el hijo termine */
+			while ((retorno = wait(&estadosalida)) != pid && retorno != -1)
+				;
+			return ((retorno == -1) ? -1 : (estadosalida >>= 8, estadosalida &= 0xFF));
+		}
 	}
-	return(0);
+	return (0);
 }

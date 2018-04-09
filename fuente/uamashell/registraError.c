@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+registra los errores en
+archivo programa_error.log
+*/
+
 #include "uamashell.h"
 
 void registraError(char *comando, int pid)

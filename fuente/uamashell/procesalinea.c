@@ -7,6 +7,12 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+avanza el apuntador de la linea leida
+determinar el token
+y la accion a ejecutar
+*/
+
 #include "uamashell.h"
 
 void procesalinea(char *bufferentrada)

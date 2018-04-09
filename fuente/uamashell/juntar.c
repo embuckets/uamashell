@@ -7,6 +7,10 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+crea el pipe entre dos comandos
+*/
+
 #include "uamashell.h"
 
 int juntar(char *comando1[], char *comando2[])

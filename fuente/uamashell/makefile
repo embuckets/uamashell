@@ -1,5 +1,5 @@
 COMPILADOR=gcc
-FUENTE=configurar.c correcomando.c dametoken.c error.c esargumento.c \
+FUENTE=configurar.c dametoken.c error.c esargumento.c \
 imprimeBitacora.c juntar.c leerlinea.c procesalinea.c procesapipe.c \
 registraComandos.c registraError.c sistema.c uamashell.c
 

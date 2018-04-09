@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+Encargado de desplegar opciones de configuracion
+y guardar los cambios en el archivo de configuacion
+*/
+
 #include "uamashell.h"
 
 void configurar(int numline)

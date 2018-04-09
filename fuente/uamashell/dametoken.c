@@ -7,6 +7,10 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+parsea y tokeniza la linea de entrada
+*/
+
 #include "uamashell.h"
 
 int dametoken(char **apuntadorsalida, char *bufferentrada, char *buffertoken, char **apuntador, char **token)

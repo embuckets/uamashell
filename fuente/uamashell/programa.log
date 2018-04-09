@@ -33,3 +33,11 @@ IP      Fecha       User    PID     Command
 192.168.0.2 2018-4-9 10:59:42 emilio Process ID:4886 gedit
 192.168.0.2 2018-4-9 11:0:8 emilio Process ID:4900 sleep
 192.168.0.2 2018-4-9 11:0:34 emilio Process ID:4915 gedit
+192.168.0.2 2018-4-9 11:24:38 emilio Process ID:6081 gedit
+192.168.0.2 2018-4-9 11:25:17 emilio Process ID:6076 ayuda
+192.168.0.2 2018-4-9 11:25:22 emilio Process ID:6076 bitacora_error
+192.168.0.2 2018-4-9 11:25:30 emilio Process ID:6076 bitacora_comandos
+192.168.0.2 2018-4-9 11:25:46 emilio Process ID:6076 terminar
+192.168.0.2 2018-4-9 11:41:21 emilio Process ID:6720 ayuda
+192.168.0.2 2018-4-9 11:42:3 emilio Process ID:6732 gedit
+192.168.0.2 2018-4-9 11:42:21 emilio Process ID:6720 terminar

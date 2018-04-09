@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+verifica sis el caracter leido 
+es un metacaracter del shell
+*/
+
 #include "uamashell.h"
 
 bool esargumento(char c)

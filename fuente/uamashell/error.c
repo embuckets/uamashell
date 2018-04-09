@@ -7,6 +7,10 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+imprime mensaje de error
+*/
+
 #include "uamashell.h"
 
 void error(char *mensaje)

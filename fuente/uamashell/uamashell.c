@@ -7,6 +7,11 @@ Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
 
+/*
+main del programa
+escribe propmpt y lee la linea
+*/
+
 #include "uamashell.h"
 
 int main(int argc, char **argv)

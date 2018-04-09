@@ -6,6 +6,11 @@ Jose Daniel Reyes Arrona			2143034111
 Juan Torres Espinoza				210204585
 Jenny Nazareth Urtiaga Torres		2113034087
 */
+/*
+guarda el segundo commando 
+que sigue despues del pipe 
+*/
+
 
 #include "uamashell.h"
 
