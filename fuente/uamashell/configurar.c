@@ -1,6 +1,4 @@
-//Este modulo no funciona correctamente verificar
 #include "uamashell.h"
-#include<string.h>
 
 void configurar(int numline)
 {	
@@ -27,7 +25,7 @@ void configurar(int numline)
         FILE* file;
 	i=0;
 	int j=0;
-	file=fopen("config.ini","r");
+	file=fopen("config","r");
 	char ch=getc(file);
 	while(ch!='@')
 	      {
@@ -43,7 +41,7 @@ void configurar(int numline)
 		ch=getc(file);
 	      }
 	fclose(file);
-	file=fopen("config.ini","w");
+	file=fopen("config","w");
 	if(numline==1)
 	{
 		buffer[0][11]=newvalue;
