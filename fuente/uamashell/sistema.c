@@ -1,3 +1,12 @@
+/*
+Autores:
+Emilio Hernandez Segovia			2143032439
+Jesus Eduardo Noriega Hurtado		2143000991
+Jose Daniel Reyes Arrona			2143034111
+Juan Torres Espinoza				210204585
+Jenny Nazareth Urtiaga Torres		2113034087
+*/
+
 #include "uamashell.h"
 
 int sistema(char **lineacomandos, int donde)
@@ -62,30 +71,36 @@ int sistema(char **lineacomandos, int donde)
 	int estadosalida, retorno;
 	int pid = fork();
 
-	if (pid < 0)
+	if (pid < 0){
 		error("Shellcito");
+		return(0);
+	}
 	if (pid == 0)
 	{
 		char *bin = (char *)malloc(MAXARG * sizeof(char));
 		strcat(bin, "/bin/");
 		strcat(bin, lineacomandos[0]);
 		execv(bin, lineacomandos);
+		return(0);
 		// registraError(*lineacomandos, pid);
 		// error(*lineacomandos);
 	}
-
-	/* Código para el padre */
-	/* Si es segundo plano imprime el pid y sale */
-
-	if (donde == SEGUNDOPLANO)
+	else
 	{
-		printf("[Process id %i]\n", pid);
-		registraCMDS(*lineacomandos, pid);
-		return (0);
-	}
+		/* Código para el padre */
+		/* Si es segundo plano imprime el pid y sale */
 
-	/* Espera hasta que el hijo termine */
-	while ((retorno = wait(&estadosalida)) != pid && retorno != -1)
-		;
-	return ((retorno == -1) ? -1 : (estadosalida >>= 8, estadosalida &= 0xFF));
+		if (donde == SEGUNDOPLANO)
+		{
+			printf("[Process id %i]\n", pid);
+			registraCMDS(*lineacomandos, pid);
+			return (0);
+		}
+
+		/* Espera hasta que el hijo termine */
+		while ((retorno = wait(&estadosalida)) != pid && retorno != -1)
+			;
+		return ((retorno == -1) ? -1 : (estadosalida >>= 8, estadosalida &= 0xFF));
+	}
+	return(0);
 }
