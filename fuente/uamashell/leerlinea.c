@@ -1,4 +1,5 @@
 #include "uamashell.h"
+#include <string.h>
 /**********************************************************************
 * leerlinea: Lee una linea para procesarla.                           *
 * Devuelve el tamaño de la linea.                                     *
@@ -32,7 +33,7 @@ int leerlinea(char *prompt,char *bufferentrada)
 		/* Si la linea es muy larga resetear */
 		if(caracter=='\n')
 		{
-			printf("UamaShell: linea muy larga\n");
+			printf("UamaShell: linea muy largaaaaaaaa\n");
 			contador=0;
 			printf("%s ",prompt);
 		}

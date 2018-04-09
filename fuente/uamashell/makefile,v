@@ -1,0 +1,90 @@
+head     1.1;
+branch   1.1.1;
+access   ;
+symbols  start:1.1.1.1 hpl:1.1.1;
+locks    ; strict;
+comment  @# @;
+
+
+1.1
+date     2017.12.01.01.15.40;  author hpl;  state Exp;
+branches 1.1.1.1;
+next     ;
+
+1.1.1.1
+date     2017.12.01.01.15.40;  author hpl;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@
+
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#######################################################################
+# Archivo de descripción para compilar el modulo sistema lineal.      #
+# $Id$																  #
+#																	  #
+# $Author$															  #
+#######################################################################
+
+#######################################################################
+# Definición de Macros												  #
+#######################################################################
+COMPILADOR=gcc 
+
+FUENTE = $(RUTA_UTIL)error.c sistema.c dametoken.c leerlinea.c procesalinea.c esargumento.c  uamashell.c
+
+OBJS=$(FUENTE:.c=.o)
+
+HEADER=uamashell.h 
+
+PROG= $(RUTA_BIN)uamashell
+
+
+#######################################################################
+# Target principal para compilar el programa.						  #
+#######################################################################
+$(PROG): $(OBJS) 
+	$(COMPILADOR) $(OBJS) -lm -o $@@
+	@@- echo "Compilación terminada $(PROG)"
+
+#######################################################################
+# Target para eliminar Objetos.										  #
+#######################################################################
+LIMPIA:
+	@@- rm -f $(OBJS)
+	@@- echo "Borrado de objetos terminado $(OBJS)"
+
+#######################################################################
+# Target para eliminar Objetos y ejecutable.						  #
+#######################################################################
+BORRA:
+	@@- rm -f $(OBJS) $(PROG)
+	@@- echo "Borrado de archivos terminado $(OBJS) $(PROG)"
+
+#######################################################################
+# Dependencia de Objetos con fuentes.								  #
+#######################################################################
+.c.o: 
+	$(COMPILADOR) -c -I$(RUTA_INCL) $*.c -o $*.o
+
+#######################################################################
+# Dependencia de Objetos con headers.								  #
+#######################################################################
+$(OBJS): $(RUTA_INCL)$(HEADER) 
+@
+
+
+1.1.1.1
+log
+@Proyecto UAMA SHELL
+@
+text
+@@

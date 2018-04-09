@@ -71,3 +71,5 @@ void configurar(int numline)
         fclose(file);
 	printf("Registro guardado con exito\n");
 }
+
+
