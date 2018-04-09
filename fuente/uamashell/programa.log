@@ -244,3 +244,8 @@ Direccion IP Fecha	      User  Process ID      Command
 192.168.109.13 2018-4-3 15:12:6 emilio Process ID:3288 gedit
 192.168.109.13 2018-4-3 15:26:19 emilio Process ID:3268 terminar
 192.168.109.13 2018-4-3 15:33:58 emilio Process ID:3095 terminar
+192.168.0.2 2018-4-8 20:37:18 emilio Process ID:466 ayuda
+192.168.0.2 2018-4-8 20:37:24 emilio Process ID:466 bitacora_comandos
+192.168.0.2 2018-4-8 20:37:38 emilio Process ID:466 ayuda
+192.168.0.2 2018-4-8 20:37:45 emilio Process ID:466 bitacora_error
+192.168.0.2 2018-4-8 20:37:48 emilio Process ID:466 ayuda

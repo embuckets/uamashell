@@ -1,5 +1,4 @@
-#include "error.h"
-#include<string.h>
+#include "uamashell.h"
 
 /**********************************************************************
 * error: Reporta los mensajes de error generados por las funciones.   *
