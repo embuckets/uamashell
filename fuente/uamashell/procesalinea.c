@@ -41,7 +41,7 @@ void procesalinea(char *bufferentrada)
             //correr procesa linea apuntando despues del caracter pipe
             strcpy(comandoUno, arg);
             comandoUno[contador] = NULL;
-            procesa_pipe(apuntador, comandoDos);
+            procesapipe(apuntador, comandoDos);
             juntar(comandoUno, comandoDos);
         return;
             break;

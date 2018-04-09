@@ -1,11 +1,3 @@
-/**********************************************************************
-* Header para uamasehell.                                             *
-*                                                                     *
-* $Id$                                                                *
-* $Author$                                                            *
-*                                                                     *
-**********************************************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -13,9 +5,13 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
+#include <netdb.h>
 #include <fcntl.h>
 #include <errno.h>
-#include "error.h"
+#include <string.h>
+#include <time.h>
 
 enum tokens
 {
@@ -47,6 +43,5 @@ void registraCMDS(char *comando, int pid);
 void registraError(char *comando, int pid);
 void imprimeB(char *archivo);
 void configurar(int i);
-bool esargumento(char);
 void error(char *);
 void procesapipe(char *, char **);

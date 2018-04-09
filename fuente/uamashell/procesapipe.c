@@ -37,16 +37,9 @@ void procesapipe(char *bufferentrada, char** comandoOutput)
             }
             if (tipotoken == EOL)
                 return;
-            contador = 0;
             break;
-        // case PIPE:
-        //     //guardar el primer comando ya leido
-        //     //correr procesa linea apuntando despues del caracter pipe
-        //     strcpy(comandoUno, arg);
-        //     comandoUno[contador] = NULL;
-            
-
-        //     break;
+        default:
+            break;
         }
     }
 }

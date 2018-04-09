@@ -1,20 +1,10 @@
 #include "uamashell.h"
-#include <stdio.h>
-
-/**********************************************************************
-* Modulo principal para ejecutar el shell.                            *
-* Devuelve el código de retorno del comando ejecutado.                *
-* $Id$                                                                *
-* $Author$                                                            *
-*                                                                     *
-* Parámetros:                                                         *
-*                                                                     *
-* argc: Contador de argumentos proporcionados.					      *
-* argv: Valor de los argumentos proporcionados.					      *
-**********************************************************************/
 
 int main(int argc, char **argv)
 {
+	signal(SIGINT, SIG_IGN);
+	signal(SIGQUIT, SIG_IGN);
+
 	FILE *inst;
 	inst = fopen("config.ini", "r");
 	int N;

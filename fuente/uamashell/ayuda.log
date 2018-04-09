@@ -3,4 +3,3 @@ bitacora_error    ... Este comando imprime los errores que ha tenido el shell
 configurar        ... Configura la ruta de las bitacoras
 terminar          ... Este comando termina uamashell :(
 ayuda             ... Muestra los comandos especiales del uamashell
-

@@ -1,14 +1,16 @@
-# %W%
 COMPILADOR=gcc
-FUENTE = configurar.c correcomando.c dametoken.c error.c esargumento.c \
+FUENTE=configurar.c correcomando.c dametoken.c error.c esargumento.c \
 imprimeBitacora.c juntar.c leerlinea.c procesalinea.c procesapipe.c \
 registraComandos.c registraError.c sistema.c uamashell.c
+
 OBJS=$(FUENTE:.c=.o)
+
 HEADER=uamashell.h
-PROG= $(RUTA_BIN)uamashell
+
+PROG=$(RUTA_BIN)uamashell
 
 CC: $(OBJS)
-	$(COMPILADOR) $(OBJS) -lm -o $(PROG)
+	$(COMPILADOR) $(OBJS) -o $(PROG)
 	@- echo "Compilación terminada"
 LIMPIA:
 	@- rm -f $(OBJS)
