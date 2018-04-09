@@ -59,15 +59,19 @@ int sistema(char **lineacomandos, int donde)
 		return 0;
 	}
 	//Fin modificaciones
-	pid_t pid, estadosalida, retorno;
+	int estadosalida, retorno;
+	int pid = fork();
 
-	if ((pid = fork()) < 0)
+	if (pid < 0)
 		error("Shellcito");
-	if (!pid)
+	if (pid == 0)
 	{
-		execvp(*lineacomandos, lineacomandos);
-		registraError(*lineacomandos, pid);
-		error(*lineacomandos);
+		char *bin = (char *)malloc(MAXARG * sizeof(char));
+		strcat(bin, "/bin/");
+		strcat(bin, lineacomandos[0]);
+		execv(bin, lineacomandos);
+		// registraError(*lineacomandos, pid);
+		// error(*lineacomandos);
 	}
 
 	/* Código para el padre */

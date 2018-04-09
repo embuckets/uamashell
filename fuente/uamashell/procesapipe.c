@@ -28,7 +28,7 @@ void procesapipe(char *bufferentrada, char **comandoOutput)
             {
                 //arg tiene el comando que se escribio en linea de comando
                 int i;
-                for (i = 0; i <= contador; i++)
+                for (i = 0; i < contador; i++)
                 {
                     strcpy(comandoOutput[i], arg[i]);
                 }

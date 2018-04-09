@@ -19,7 +19,7 @@ void procesalinea(char *bufferentrada)
     }
     for (i = 0; i < MAXARG; i++)
     {
-        arg[i] = (char *)malloc(MAXARG * sizeof(char *));
+        arg[i] = (char *)malloc(MAXARG * sizeof(char));
     }
 
     char **comandoUno = (char **)malloc(MAXBUF * sizeof(char **));
@@ -30,7 +30,7 @@ void procesalinea(char *bufferentrada)
     }
     for (i = 0; i < MAXARG; i++)
     {
-        comandoUno[i] = (char *)malloc(MAXARG * sizeof(char *));
+        comandoUno[i] = (char *)malloc(MAXARG * sizeof(char));
     }
 
     char **comandoDos = (char **)malloc(MAXBUF * sizeof(char **));
@@ -41,7 +41,7 @@ void procesalinea(char *bufferentrada)
     }
     for (i = 0; i < MAXARG; i++)
     {
-        comandoDos[i] = (char *)malloc(MAXARG * sizeof(char *));
+        comandoDos[i] = (char *)malloc(MAXARG * sizeof(char));
     }
 
     for (contador = 0;;)
@@ -70,7 +70,7 @@ void procesalinea(char *bufferentrada)
         case PIPE:
             //guardar el primer comando ya leido
             //correr procesa linea apuntando despues del caracter pipe
-            for (i = 0; i <= contador; i++)
+            for (i = 0; i < contador; i++)
             {
                 strcpy(comandoUno[i], arg[i]);
             }
