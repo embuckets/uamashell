@@ -1,2 +1,10 @@
 IP      Fecha       User    PID     Command
 
+192.168.0.2 2018-4-8 22:29:54 emilio Process ID:6006 ayuda
+192.168.0.2 2018-4-8 22:31:27 emilio Process ID:6006 bitacora_comandos
+192.168.0.2 2018-4-8 22:31:34 emilio Process ID:6006 bitacora_error
+192.168.0.2 2018-4-8 22:32:49 emilio Process ID:6006 terminar
+192.168.0.2 2018-4-8 23:6:26 emilio Process ID:2683 gedit
+192.168.0.2 2018-4-8 23:10:11 emilio Process ID:2669 ayuda
+192.168.0.2 2018-4-8 23:10:18 emilio Process ID:2669 bitacora_comandos
+192.168.0.2 2018-4-8 23:13:11 emilio Process ID:2669 terminar

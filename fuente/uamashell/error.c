@@ -3,8 +3,7 @@
 void error(char *mensaje)
 {
 	fprintf(stderr, "\a");
-	strcat(mensaje, " Command Failure ");
-	perror(mensaje);
-	printf("UAM>");
+	strcat(mensaje, " Command Failure\n");
+	//printf("UAM>");
 	exit((errno) ? errno : -1);
 }

@@ -2,7 +2,6 @@
 
 void procesalinea(char *bufferentrada)
 {
-    char *arg[MAXARG + 1];
     char buffertoken[2 * MAXBUF];
     char *apuntador = bufferentrada;
     char *token = buffertoken;
@@ -10,8 +9,40 @@ void procesalinea(char *bufferentrada)
     int contador;
     int tipo;
 
-    char *comandoUno[MAXARG + 1];
-    char *comandoDos[MAXARG + 1];
+    int i;
+
+    char **arg = (char **)malloc(MAXBUF * sizeof(char **));
+    if (arg == NULL)
+    {
+        perror("fallo malloc\n");
+        exit(EXIT_FAILURE);
+    }
+    for (i = 0; i < MAXARG; i++)
+    {
+        arg[i] = (char *)malloc(MAXARG * sizeof(char *));
+    }
+
+    char **comandoUno = (char **)malloc(MAXBUF * sizeof(char **));
+    if (arg == NULL)
+    {
+        perror("fallo malloc\n");
+        exit(EXIT_FAILURE);
+    }
+    for (i = 0; i < MAXARG; i++)
+    {
+        comandoUno[i] = (char *)malloc(MAXARG * sizeof(char *));
+    }
+
+    char **comandoDos = (char **)malloc(MAXBUF * sizeof(char **));
+    if (arg == NULL)
+    {
+        perror("fallo malloc\n");
+        exit(EXIT_FAILURE);
+    }
+    for (i = 0; i < MAXARG; i++)
+    {
+        comandoDos[i] = (char *)malloc(MAXARG * sizeof(char *));
+    }
 
     for (contador = 0;;)
     {
@@ -30,7 +61,7 @@ void procesalinea(char *bufferentrada)
             {
                 //arg tiene el comando que se escribio en linea de comando
                 arg[contador] = NULL;
-                sistema_tipo(arg, tipo);
+                sistema(arg, tipo);
             }
             if (tipotoken == EOL)
                 return;
@@ -39,12 +70,17 @@ void procesalinea(char *bufferentrada)
         case PIPE:
             //guardar el primer comando ya leido
             //correr procesa linea apuntando despues del caracter pipe
-            strcpy(comandoUno, arg);
-            comandoUno[contador] = NULL;
+            for (i = 0; i <= contador; i++)
+            {
+                strcpy(comandoUno[i], arg[i]);
+            }
+            //comandoUno[contador] = NULL;
             procesapipe(apuntador, comandoDos);
             juntar(comandoUno, comandoDos);
-        return;
+            return;
+        default:
             break;
+            //break;
         }
     }
 }

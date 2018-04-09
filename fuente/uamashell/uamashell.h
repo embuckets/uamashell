@@ -45,3 +45,4 @@ void imprimeB(char *archivo);
 void configurar(int i);
 void error(char *);
 void procesapipe(char *, char **);
+int juntar(char *comando1[], char *comando2[]);

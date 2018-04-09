@@ -1,6 +1,6 @@
 #include "uamashell.h"
 
-void procesapipe(char *bufferentrada, char** comandoOutput)
+void procesapipe(char *bufferentrada, char **comandoOutput)
 {
     char *arg[MAXARG + 1];
     char buffertoken[2 * MAXBUF];
@@ -9,7 +9,7 @@ void procesapipe(char *bufferentrada, char** comandoOutput)
     int tipotoken;
     int contador;
     int tipo;
-    
+
     for (contador = 0;;)
     {
         /* Actuar conforme al tipo de tokenen */
@@ -28,11 +28,12 @@ void procesapipe(char *bufferentrada, char** comandoOutput)
             {
                 //arg tiene el comando que se escribio en linea de comando
                 int i;
-                for(i = 0; i < contador; i++){
-                    strcpy(&comandoOutput[i], &arg[i]);
+                for (i = 0; i <= contador; i++)
+                {
+                    strcpy(comandoOutput[i], arg[i]);
                 }
                 //arg[contador] = NULL;
-                comandoOutput[contador] = NULL;
+                //comandoOutput[contador] = NULL;
                 //sistema_tipo(arg, tipo);
             }
             if (tipotoken == EOL)
