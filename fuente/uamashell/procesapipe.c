@@ -1,6 +1,6 @@
 #include "uamashell.h"
 
-void procesalinea(char *bufferentrada)
+void procesapipe(char *bufferentrada, char** comandoOutput)
 {
     char *arg[MAXARG + 1];
     char buffertoken[2 * MAXBUF];
@@ -9,10 +9,7 @@ void procesalinea(char *bufferentrada)
     int tipotoken;
     int contador;
     int tipo;
-
-    char *comandoUno[MAXARG + 1];
-    char *comandoDos[MAXARG + 1];
-
+    
     for (contador = 0;;)
     {
         /* Actuar conforme al tipo de tokenen */
@@ -25,26 +22,31 @@ void procesalinea(char *bufferentrada)
         case EOL:
         case PUNTOYCOMA:
         case AMPERSAND:
-            tipo = (tipotoken == AMPERSAND) ? SEGUNDOPLANO : PRIMERPLANO;
+
+            //tipo = (tipotoken == AMPERSAND) ? SEGUNDOPLANO : PRIMERPLANO;
             if (contador)
             {
                 //arg tiene el comando que se escribio en linea de comando
-                arg[contador] = NULL;
-                sistema_tipo(arg, tipo);
+                int i;
+                for(i = 0; i < contador; i++){
+                    strcpy(&comandoOutput[i], &arg[i]);
+                }
+                //arg[contador] = NULL;
+                comandoOutput[contador] = NULL;
+                //sistema_tipo(arg, tipo);
             }
             if (tipotoken == EOL)
                 return;
             contador = 0;
             break;
-        case PIPE:
-            //guardar el primer comando ya leido
-            //correr procesa linea apuntando despues del caracter pipe
-            strcpy(comandoUno, arg);
-            comandoUno[contador] = NULL;
-            procesa_pipe(apuntador, comandoDos);
-            juntar(comandoUno, comandoDos);
-        return;
-            break;
+        // case PIPE:
+        //     //guardar el primer comando ya leido
+        //     //correr procesa linea apuntando despues del caracter pipe
+        //     strcpy(comandoUno, arg);
+        //     comandoUno[contador] = NULL;
+            
+
+        //     break;
         }
     }
 }

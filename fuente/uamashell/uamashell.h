@@ -17,21 +17,36 @@
 #include <errno.h>
 #include "error.h"
 
-enum tokens{EOL=1,ARG,AMPERSAND,PUNTOYCOMA};
+enum tokens
+{
+    EOL = 1,
+    ARG,
+    AMPERSAND,
+    PUNTOYCOMA,
+    PIPE
+};
 
 #define MAXARG 512
 #define MAXBUF 512
 
-enum plano{PRIMERPLANO,SEGUNDOPLANO};
+enum plano
+{
+    PRIMERPLANO,
+    SEGUNDOPLANO
+};
 
-typedef enum {FALSO,CIERTO} bool;
+typedef enum { FALSO,
+               CIERTO } bool;
 
 bool esargumento(char);
-int sistema(char **,int);
+int sistema(char **, int);
 void procesalinea(char *);
-int dametoken(char **,char **,char **);
-int leerlinea(char *,char *);
-void registraCMDS(char* comando,int pid);
-void registraError(char* comando,int pid);
-void imprimeB(char* archivo);
+int dametoken(char **, char *, char *, char **, char **);
+int leerlinea(char *, char *);
+void registraCMDS(char *comando, int pid);
+void registraError(char *comando, int pid);
+void imprimeB(char *archivo);
 void configurar(int i);
+bool esargumento(char);
+void error(char *);
+void procesapipe(char *, char **);
